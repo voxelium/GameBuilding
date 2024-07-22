@@ -1,7 +1,5 @@
-
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 namespace GameArchitecture
 {
@@ -35,7 +33,7 @@ namespace GameArchitecture
             }
         }
 
-        public void SendInitializeAllInteractors()
+        public void InitializeAllInteractors()
         {
             foreach (var interactor in interactorsMap.Values)
             {
@@ -43,13 +41,20 @@ namespace GameArchitecture
             }
         }
 
-        public void SendOnStartAllInteractors()
+        public void StartAllInteractors()
         {
             foreach (var interactor in interactorsMap.Values)
             {
                 interactor.OnStart();
             }
         }
+
+        public T GetInteractor<T>() where T : Interactor
+        {
+            var type = typeof(T);
+            return (T)interactorsMap[type];
+        }
+
     }
 
 }

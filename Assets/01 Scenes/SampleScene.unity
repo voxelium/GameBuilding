@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 9970497}
   - component: {fileID: 9970496}
   m_Layer: 0
-  m_Name: AddTester
+  m_Name: ArchTester
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -8,11 +8,16 @@ namespace GameArchitecture
         public int coins => repository.coins;
 
 
-        public BankInteractor()
+        public override void OnCreate()
         {
-            // repository = _repository;
+            base.OnCreate();
+            repository = ArchTester.repositoriesBase.GetRepository<BankRepository>();
         }
 
+        public override void Initialize()
+        {
+            Bank.Initialize(this);
+        }
 
         public bool isEnoughCoins(int value)
         {
