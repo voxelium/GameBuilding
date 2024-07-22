@@ -14,7 +14,7 @@ public class AddCoinsTester : MonoBehaviour
         bankRepository = new BankRepository();
         bankRepository.Initialize();
 
-        bankInteractor = new BankInteractor(bankRepository);
+        bankInteractor = new BankInteractor();
         bankInteractor.Initialize();
 
         Debug.Log("Bank Initialized. Now Coins = " + bankInteractor.coins);

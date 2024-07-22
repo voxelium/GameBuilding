@@ -8,9 +8,9 @@ namespace GameArchitecture
         public int coins => repository.coins;
 
 
-        public BankInteractor(BankRepository _repository)
+        public BankInteractor()
         {
-            repository = _repository;
+            // repository = _repository;
         }
 
 
