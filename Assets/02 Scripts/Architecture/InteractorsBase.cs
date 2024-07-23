@@ -6,22 +6,16 @@ namespace GameArchitecture
     public class InteractorsBase
     {
         private Dictionary<Type, Interactor> interactorsMap;
+        private SceneConfig sceneConfig;
 
-        public InteractorsBase()
+        public InteractorsBase(SceneConfig _sceneConfig)
         {
-            interactorsMap = new Dictionary<Type, Interactor>();
+            sceneConfig = _sceneConfig;
         }
 
         public void CreateAllIneractors()
         {
-            CreateInteractor<BankInteractor>();
-        }
-
-
-        private void CreateInteractor<T>() where T : Interactor, new()
-        {
-            var interactor = new T();
-            interactorsMap[typeof(T)] = interactor;
+            interactorsMap = sceneConfig.CreatAllInteractors();
         }
 
 

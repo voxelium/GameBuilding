@@ -11,7 +11,7 @@ namespace GameArchitecture
         public override void OnCreate()
         {
             base.OnCreate();
-            repository = ArchTester.repositoriesBase.GetRepository<BankRepository>();
+            repository = ArchTester.scene.GetRepository<BankRepository>();
         }
 
         public override void Initialize()

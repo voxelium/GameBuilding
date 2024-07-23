@@ -6,23 +6,17 @@ namespace GameArchitecture
     public class RepositoriesBase
     {
         private Dictionary<Type, Repository> repositoriesMap;
+        private SceneConfig sceneConfig;
 
-        public RepositoriesBase()
+        public RepositoriesBase(SceneConfig _sceneConfig)
         {
-            repositoriesMap = new Dictionary<Type, Repository>();
+            sceneConfig = _sceneConfig;
         }
+
 
         public void CreateAllRepositories()
         {
-            CreateRepository<BankRepository>();
-        }
-
-
-        private void CreateRepository<T>() where T : Repository, new()
-        {
-            var repository = new T();
-            var type = typeof(T);
-            repositoriesMap[type] = repository;
+            repositoriesMap = sceneConfig.CreatAllRepositories();
         }
 
 
